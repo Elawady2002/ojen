@@ -80,7 +80,7 @@ const JourneysGrid = () => {
       <style dangerouslySetInnerHTML={{ __html: `
         /* ── BASE ── */
         .journeys-page {
-          background: var(--bg-primary);
+          background: var(--primary);
         }
 
         /* ── HERO ── */
@@ -101,7 +101,7 @@ const JourneysGrid = () => {
         .jg-hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(160deg, rgba(10,14,20,0.55) 0%, rgba(10,14,20,0.92) 100%);
+          background: linear-gradient(160deg, rgba(10,11,15,0.55) 0%, rgba(10,11,15,0.92) 100%);
           z-index: 1;
         }
 
@@ -118,22 +118,22 @@ const JourneysGrid = () => {
         .orb-ring {
           position: absolute;
           border-radius: 50%;
-          border: 1px solid rgba(197,160,89,0.07);
+          border: 1px solid rgba(217,185,89,0.07);
         }
-        .orb-r1 { width: 280px; height: 280px; border-color: rgba(197,160,89,0.14); animation: orbSpin 14s linear infinite; }
+        .orb-r1 { width: 280px; height: 280px; border-color: rgba(217,185,89,0.14); animation: orbSpin 14s linear infinite; }
         .orb-r2 { width: 480px; height: 480px; animation: orbSpin 24s linear infinite reverse; }
-        .orb-r3 { width: 680px; height: 680px; border-color: rgba(197,160,89,0.04); animation: orbSpin 38s linear infinite; }
+        .orb-r3 { width: 680px; height: 680px; border-color: rgba(217,185,89,0.04); animation: orbSpin 38s linear infinite; }
         .orb-core {
           position: absolute;
           width: 100px; height: 100px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(197,160,89,0.18) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(217,185,89,0.18) 0%, transparent 70%);
           animation: corePulse 3.5s ease-in-out infinite;
         }
         .orb-streak {
           position: absolute;
           width: 1px;
-          background: linear-gradient(to bottom, rgba(197,160,89,0.5), transparent);
+          background: linear-gradient(to bottom, rgba(217,185,89,0.5), transparent);
           transform-origin: top center;
           opacity: 0.3;
         }
@@ -156,7 +156,7 @@ const JourneysGrid = () => {
           font-size: 4.2rem;
           font-weight: 900;
           margin-bottom: 22px;
-          background: linear-gradient(160deg, #ffffff 0%, rgba(197,160,89,0.85) 55%, #ffffff 100%);
+          background: linear-gradient(160deg, var(--white) 0%, var(--accent) 55%, var(--white) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -164,7 +164,7 @@ const JourneysGrid = () => {
         }
         .jg-hero-sub {
           font-size: 1.08rem;
-          color: rgba(255,255,255,0.6);
+          color: var(--secondary);
           max-width: 680px;
           margin: 0 auto 32px;
           line-height: 1.82;
@@ -172,7 +172,7 @@ const JourneysGrid = () => {
         .jg-hero-rule {
           width: 90px;
           height: 2px;
-          background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+          background: linear-gradient(90deg, transparent, var(--accent), transparent);
           margin: 0 auto;
           transform-origin: center;
         }

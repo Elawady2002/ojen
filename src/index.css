@@ -1,13 +1,33 @@
 :root {
-  --bg-primary: #0a0e14;
-  --bg-secondary: #141b26;
-  --accent-gold: #c5a059;
-  --accent-gold-hover: #e0bc7a;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --white: #ffffff;
+  --black: #0a0b0f;
+  --primary: #0f1724;
+  --secondary: #a0a8b5;
+  --gray: #1b2232;
+  --border: #2a3242;
+
+  --accent: #d9b959;
+  --accentHover: #f0cc5a;
+  --accentSoft: rgba(217, 185, 89, 0.1);
+
+  --linearBackgroundCard: linear-gradient(145deg, #121b2e, #0d1422);
+  --linearSection: linear-gradient(180deg, #0f1724 0%, #0a0b0f 100%);
+  --linearAccent: linear-gradient(90deg, #d9b959 0%, #f0cc5a 100%);
+
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 15px rgba(217, 185, 89, 0.15);
+
+  /* Backward compat aliases */
+  --bg-primary: var(--primary);
+  --bg-secondary: var(--gray);
+  --accent-gold: var(--accent);
+  --accent-gold-hover: var(--accentHover);
+  --text-primary: var(--white);
+  --text-secondary: var(--secondary);
   --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border: var(--border);
+  --card-shadow: var(--shadow-card);
+
   --font-arabic: 'Tajawal', sans-serif;
   --font-english: 'Inter', sans-serif;
 }
@@ -24,8 +44,8 @@
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--primary);
+  color: var(--white);
   font-family: var(--font-arabic);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -49,14 +69,14 @@ button {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-secondary);
+  background: var(--gray);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold);
+  background: var(--accent);
 }
 
 .container {
@@ -66,8 +86,8 @@ button {
 }
 
 .premium-btn {
-  background: var(--accent-gold);
-  color: var(--bg-primary);
+  background: var(--accent);
+  color: var(--black);
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -78,9 +98,9 @@ button {
 }
 
 .premium-btn:hover {
-  background: var(--accent-gold-hover);
+  background: var(--accentHover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  box-shadow: var(--shadow-glow);
 }
 
 .section-title {
@@ -91,9 +111,9 @@ button {
 }
 
 .glass-card {
-  background: var(--glass-bg);
+  background: var(--gray);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border);
   border-radius: 16px;
 }

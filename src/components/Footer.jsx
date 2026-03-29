@@ -90,10 +90,10 @@ const Footer = () => {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .main-footer {
-          background: linear-gradient(180deg, #0a0f18 0%, #05080d 100%);
+          background: var(--linearSection);
           padding: 80px 0 40px;
-          border-top: 1px solid rgba(197, 160, 89, 0.1);
-          color: white;
+          border-top: 1px solid rgba(217, 185, 89, 0.1);
+          color: var(--white);
           direction: rtl;
           position: relative;
           overflow: hidden;
@@ -102,7 +102,7 @@ const Footer = () => {
           content: '';
           position: absolute;
           top: 0; left: 0; right: 0; height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
+          background: linear-gradient(90deg, transparent, rgba(217, 185, 89, 0.3), transparent);
         }
         
         .footer-top-row {
@@ -120,7 +120,7 @@ const Footer = () => {
         .contact-item.right { text-align: left; }
         
         .contact-item .label {
-          color: rgba(255,255,255,0.5);
+          color: var(--secondary);
           font-size: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -128,23 +128,23 @@ const Footer = () => {
         .contact-item .value {
           font-size: 1.6rem;
           font-weight: 900;
-          color: white;
+          color: var(--white);
           transition: color 0.3s;
         }
         .contact-item .value:hover {
-          color: var(--accent-gold);
+          color: var(--accent);
         }
         
         .footer-logo-img {
           height: 75px;
           object-fit: contain;
-          filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.2));
+          filter: drop-shadow(0 0 15px rgba(217, 185, 89, 0.2));
         }
         
         .divider {
           width: 100%;
           height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+          background: linear-gradient(90deg, transparent, var(--border), transparent);
           margin-bottom: 60px;
         }
 
@@ -159,7 +159,7 @@ const Footer = () => {
           font-size: 1.25rem;
           margin-bottom: 30px;
           font-weight: 800;
-          color: white;
+          color: var(--white);
           position: relative;
           display: inline-block;
         }
@@ -170,43 +170,43 @@ const Footer = () => {
           right: 0;
           width: 30px;
           height: 2px;
-          background: var(--accent-gold);
+          background: var(--accent);
         }
 
         .footer-subtext {
           font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.6);
+          color: var(--secondary);
           line-height: 1.7;
           margin-bottom: 25px;
         }
 
         .newsletter-wrapper {
           display: flex;
-          background: rgba(255, 255, 255, 0.03);
+          background: var(--gray);
           border-radius: 12px;
           overflow: hidden;
           margin-bottom: 30px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          border: 1px solid var(--border);
           transition: border-color 0.3s, box-shadow 0.3s;
           backdrop-filter: blur(10px);
         }
         .newsletter-wrapper:focus-within {
-          border-color: rgba(197, 160, 89, 0.4);
-          box-shadow: 0 0 20px rgba(197, 160, 89, 0.1);
+          border-color: var(--accent);
+          box-shadow: var(--shadow-glow);
         }
         .newsletter-input {
           flex: 1;
           background: transparent;
           border: none;
-          color: white;
+          color: var(--white);
           padding: 16px 20px;
           outline: none;
           font-size: 0.95rem;
           text-align: right;
         }
         .newsletter-submit-btn {
-          background: var(--accent-gold);
-          color: #05080d;
+          background: var(--accent);
+          color: var(--black);
           padding: 0 30px;
           font-weight: 800;
           font-size: 0.95rem;
@@ -215,13 +215,13 @@ const Footer = () => {
           cursor: pointer;
         }
         .newsletter-submit-btn:hover {
-          background: white;
+          background: var(--accentHover);
           transform: scale(1.05);
         }
 
         .payment-section .payment-title {
           font-size: 0.9rem;
-          color: rgba(255,255,255,0.4);
+          color: var(--secondary);
           margin-bottom: 15px;
           font-weight: 600;
           text-transform: uppercase;
@@ -244,19 +244,19 @@ const Footer = () => {
           margin-bottom: 14px;
         }
         .footer-links li a {
-          color: rgba(255, 255, 255, 0.55);
+          color: var(--secondary);
           font-size: 1rem;
           transition: all 0.3s;
           display: inline-block;
         }
         .footer-links li a:hover {
-          color: var(--accent-gold);
+          color: var(--accent);
           transform: translateX(-5px);
         }
 
         .about-text {
           font-size: 1rem;
-          color: rgba(255, 255, 255, 0.65);
+          color: var(--secondary);
           line-height: 1.9;
           margin-bottom: 30px;
         }
@@ -271,31 +271,31 @@ const Footer = () => {
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.03);
+          background: var(--gray);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: rgba(255, 255, 255, 0.6);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: var(--secondary);
+          border: 1px solid var(--border);
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .social-icon-circle:hover {
-          background: var(--accent-gold);
-          color: #05080d;
-          border-color: var(--accent-gold);
+          background: var(--accent);
+          color: var(--black);
+          border-color: var(--accent);
           transform: translateY(-5px) rotate(8deg);
-          box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+          box-shadow: var(--shadow-glow);
         }
 
         .footer-copyright-row {
           text-align: center;
           padding: 40px 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          border-top: 1px solid var(--border);
           font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.4);
+          color: var(--secondary);
         }
         .footer-copyright-row p b {
-          color: var(--accent-gold);
+          color: var(--accent);
           font-weight: 700;
         }
 

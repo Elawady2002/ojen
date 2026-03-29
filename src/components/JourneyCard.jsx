@@ -53,7 +53,7 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
            ────────────────────────────── */
         .tc-back {
           transform: rotateY(180deg);
-          background: #111418;
+          background: var(--gray);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -66,11 +66,11 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
           display: block;
           width: 140px;
           height: 160%;
-          background: linear-gradient(
+            background: linear-gradient(
             90deg,
             transparent 0%,
             rgba(var(--c), 0.9) 30%,
-            rgba(197,160,89,0.85) 50%,
+            var(--accent) 50%,
             rgba(var(--c), 0.9) 70%,
             transparent 100%
           );
@@ -84,7 +84,7 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
           width: 98.5%;
           height: 98.5%;
           border-radius: 18px;
-          background: #0d1118;
+          background: var(--primary);
           display: flex;
           flex-direction: column;
           z-index: 1;
@@ -126,7 +126,7 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
         .tc-tag-text {
           font-size: 0.78rem;
           font-weight: 600;
-          color: rgba(255,255,255,0.4);
+          color: var(--secondary);
           letter-spacing: 0.5px;
           white-space: nowrap;
         }
@@ -164,18 +164,18 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
         .tc-stat-label {
           font-size: 0.72rem;
           font-weight: 700;
-          color: rgba(255,255,255,0.35);
+          color: var(--secondary);
           letter-spacing: 1px;
           text-transform: uppercase;
         }
         .tc-stat-value { 
           font-size: 0.82rem; 
           font-weight: 600; 
-          color: white;
+          color: var(--white);
           line-height: 1.4;
         }
         .tc-value-text {
-          color: rgba(255,255,255,0.7);
+          color: var(--secondary);
           font-size: 0.8rem;
           line-height: 1.5;
         }
@@ -192,7 +192,7 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
           text-align: center;
           font-size: 0.88rem;
           font-weight: 800;
-          color: #0a0e14;
+          color: var(--black);
           letter-spacing: 0.4px;
           transition: transform 0.2s;
         }
@@ -204,7 +204,7 @@ const JourneyCard = ({ id, title, img, color, duration, tagline, goals = [], sec
            FRONT FACE  (visible by default)
            ────────────────────────────── */
         .tc-front {
-          background: #0d1118;
+          background: var(--primary);
         }
         .tc-front-img {
           position: absolute;

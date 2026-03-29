@@ -10,14 +10,14 @@ const PagePlaceholder = ({ title }) => {
       justifyContent: 'center',
       padding: '120px 20px 60px'
     }}>
-      <h1 style={{ color: 'var(--accent-gold)', fontSize: '3rem', marginBottom: '20px' }}>{title}</h1>
+      <h1 style={{ color: 'var(--accent)', fontSize: '3rem', marginBottom: '20px' }}>{title}</h1>
       <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}>هذه الصفحة قيد التطوير حالياً. ترقبوا الإطلاق قريباً.</p>
       
       <div style={{ 
         marginTop: '40px', 
         width: '100px', 
         height: '2px', 
-        background: 'linear-gradient(to right, transparent, var(--accent-gold), transparent)' 
+        background: 'linear-gradient(to right, transparent, var(--accent), transparent)' 
       }}></div>
     </div>
   );

@@ -40,7 +40,7 @@ const PathBlock = ({ sectionKey, title, children, color, colorRgb, index }) => {
       </div>
 
       <div className="pb-body">
-        <h3 className="pb-title" style={{ color: 'var(--accent-gold)' }}>{title}</h3>
+        <h3 className="pb-title"             style={{ color: 'var(--accent)' }}>{title}</h3>
         <div className="pb-text">{children}</div>
       </div>
     </motion.div>
@@ -293,7 +293,7 @@ const JourneyDetail = () => {
               <button
                 className="lp-col-btn lp-btn-premium"
                 style={{
-                  background: `linear-gradient(135deg, rgba(${colorRgb},0.85), var(--accent-gold))`,
+                  background: `linear-gradient(135deg, rgba(${colorRgb},0.85), var(--accent))`,
                   boxShadow: `0 8px 28px rgba(${colorRgb},0.35)`,
                 }}
               >
@@ -309,7 +309,7 @@ const JourneyDetail = () => {
       <style dangerouslySetInnerHTML={{ __html: `
         /* BASE */
         .detail-lp {
-          background: var(--bg-primary);
+          background: var(--primary);
         }
 
         /* ── HERO ── */
@@ -331,7 +331,7 @@ const JourneyDetail = () => {
         .lp-hero-dark {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to bottom, rgba(10,14,20,0.45) 0%, rgba(10,14,20,0.97) 100%);
+          background: linear-gradient(to bottom, rgba(10,11,15,0.45) 0%, rgba(10,11,15,0.97) 100%);
         }
         .lp-hero-beam {
           position: absolute;
@@ -347,7 +347,7 @@ const JourneyDetail = () => {
         }
         .lp-breadcrumb {
           font-size: 0.85rem;
-          color: var(--accent-gold);
+          color: var(--accent);
           letter-spacing: 5px;
           text-transform: uppercase;
           font-family: var(--font-english);
@@ -358,20 +358,21 @@ const JourneyDetail = () => {
           font-weight: 900;
           line-height: 1.12;
           margin-bottom: 18px;
-          background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.72) 100%);
+          background: linear-gradient(180deg, var(--white) 0%, var(--secondary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
         .lp-hero-tagline {
           font-size: 1.25rem;
-          color: var(--accent-gold);
+          color: var(--accent);
           letter-spacing: 7px;
           margin-bottom: 32px;
         }
         .lp-hero-rule {
           width: 170px;
           height: 2px;
+          background: var(--linearAccent);
           margin: 0 auto;
           transform-origin: right center;
         }
@@ -395,7 +396,7 @@ const JourneyDetail = () => {
           aspect-ratio: 7 / 10;
           border-radius: 20px;
           overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.05);
+          border: 1px solid var(--border);
         }
         .lp-dv-img {
           width: 100%;
@@ -423,7 +424,7 @@ const JourneyDetail = () => {
         }
         .lp-desc-body {
           font-size: 1.1rem;
-          color: rgba(255,255,255,0.76);
+          color: var(--secondary);
           line-height: 1.88;
           margin-bottom: 28px;
         }
@@ -434,13 +435,13 @@ const JourneyDetail = () => {
         }
         .lp-desc-meta {
           font-size: 0.93rem;
-          color: rgba(255,255,255,0.45);
+          color: var(--secondary);
         }
-        .lp-desc-meta strong { color: rgba(255,255,255,0.78); }
+        .lp-desc-meta strong { color: var(--white); }
 
         /* ── GOALS ── */
         .lp-goals-wrap {
-          background: var(--bg-secondary);
+          background: var(--gray);
           padding: 80px 0 90px;
           margin-bottom: 0;
         }
@@ -453,7 +454,7 @@ const JourneyDetail = () => {
         .lp-goals-title {
           font-size: 2.1rem;
           font-weight: 800;
-          color: var(--accent-gold);
+          color: var(--accent);
         }
         .lp-goals-grid {
           display: grid;
@@ -464,7 +465,7 @@ const JourneyDetail = () => {
           display: flex;
           align-items: flex-start;
           gap: 13px;
-          background: rgba(255,255,255,0.025);
+          background: var(--gray);
           padding: 18px 20px;
           border-radius: 12px;
           border: 1px solid rgba(var(--c), 0.12);
@@ -477,7 +478,7 @@ const JourneyDetail = () => {
         .lp-goal-n {
           font-size: 1.9rem;
           font-weight: 900;
-          color: rgba(197,160,89,0.07);
+          color: rgba(217,185,89,0.07);
           font-family: var(--font-english);
           line-height: 1;
           min-width: 36px;
@@ -485,7 +486,7 @@ const JourneyDetail = () => {
         }
         .lp-goal-text {
           font-size: 0.93rem;
-          color: rgba(255,255,255,0.78);
+          color: var(--secondary);
           line-height: 1.6;
         }
 
@@ -511,7 +512,7 @@ const JourneyDetail = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(255,255,255,0.025);
+          background: var(--gray);
           border: 1px solid;
           border-radius: 10px;
           flex-shrink: 0;
@@ -525,7 +526,7 @@ const JourneyDetail = () => {
         }
         .pb-text p {
           font-size: 0.98rem;
-          color: rgba(255,255,255,0.68);
+          color: var(--secondary);
           line-height: 1.78;
         }
 
@@ -538,7 +539,7 @@ const JourneyDetail = () => {
           font-weight: 900;
           text-align: center;
           margin-bottom: 38px;
-          background: linear-gradient(135deg, #fff, var(--accent-gold));
+          background: linear-gradient(135deg, var(--white), var(--accent));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -555,19 +556,19 @@ const JourneyDetail = () => {
           padding: 10px 28px;
           font-size: 0.93rem;
           font-weight: 600;
-          color: rgba(255,255,255,0.45);
+          color: var(--secondary);
           background: transparent;
-          border: 1px solid rgba(255,255,255,0.1);
+          border: 1px solid var(--border);
           border-radius: 30px;
           cursor: pointer;
           font-family: inherit;
           transition: all 0.3s ease;
         }
         .lp-pkg-active {
-          color: var(--accent-gold);
-          background: rgba(197,160,89,0.1);
-          border-color: rgba(197,160,89,0.5);
-          box-shadow: 0 0 22px rgba(197,160,89,0.1);
+          color: var(--accent);
+          background: var(--accentSoft);
+          border-color: var(--accent);
+          box-shadow: var(--shadow-glow);
           transform: translateY(-3px);
         }
 
@@ -583,16 +584,16 @@ const JourneyDetail = () => {
         .lp-col {
           position: relative;
           padding: 44px 34px;
-          background: var(--bg-secondary);
+          background: var(--gray);
           border-radius: 24px;
-          border: 1px solid rgba(255,255,255,0.07);
+          border: 1px solid var(--border);
           overflow: hidden;
           text-align: right;
           direction: rtl;
         }
         .lp-col-premium {
-          border-color: rgba(197,160,89,0.32);
-          background: rgba(18,24,35,0.95);
+          border-color: var(--accent);
+          background: var(--linearBackgroundCard);
         }
         .lp-col-glow {
           position: absolute;
@@ -603,8 +604,8 @@ const JourneyDetail = () => {
           position: absolute;
           top: 0;
           left: 0;
-          background: var(--accent-gold);
-          color: var(--bg-primary);
+          background: var(--accent);
+          color: var(--black);
           font-size: 0.76rem;
           font-weight: 800;
           padding: 5px 16px;
@@ -621,20 +622,20 @@ const JourneyDetail = () => {
         .lp-col-name {
           font-size: 1.75rem;
           font-weight: 800;
-          color: rgba(255,255,255,0.82);
+          color: var(--white);
         }
         .lp-col-name-gold { color: white; }
         .lp-col-gem {
           font-size: 1.7rem;
-          color: rgba(255,255,255,0.12);
+          color: var(--secondary);
         }
         .lp-col-desc {
           font-size: 0.9rem;
-          color: rgba(255,255,255,0.48);
+          color: var(--secondary);
           line-height: 1.65;
           margin-bottom: 26px;
           padding-bottom: 22px;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-bottom: 1px solid var(--border);
         }
         .lp-col-list {
           list-style: none;
@@ -648,7 +649,7 @@ const JourneyDetail = () => {
           align-items: flex-start;
           gap: 11px;
           font-size: 0.9rem;
-          color: rgba(255,255,255,0.62);
+          color: var(--secondary);
           line-height: 1.5;
         }
         .lp-dot {
@@ -656,10 +657,11 @@ const JourneyDetail = () => {
           height: 6px;
           min-width: 6px;
           border-radius: 50%;
-          background: rgba(197,160,89,0.35);
+          background: var(--accent);
+          opacity: 0.35;
           margin-top: 6px;
         }
-        .lp-dot-gold { background: var(--accent-gold); }
+        .lp-dot-gold { background: var(--accent); }
         .lp-col-btn {
           width: 100%;
           padding: 14px 20px;
@@ -678,15 +680,15 @@ const JourneyDetail = () => {
         }
         .lp-btn-basic {
           background: transparent;
-          border: 1px solid rgba(197,160,89,0.38);
-          color: var(--accent-gold);
+          border: 1px solid var(--accent);
+          color: var(--accent);
         }
         .lp-btn-basic:hover {
-          background: rgba(197,160,89,0.1);
-          border-color: rgba(197,160,89,0.65);
+          background: var(--accentSoft);
+          border-color: var(--accentHover);
         }
         .lp-btn-premium {
-          color: var(--bg-primary);
+          color: var(--black);
           font-weight: 800;
           transition: filter 0.3s, transform 0.3s;
         }
