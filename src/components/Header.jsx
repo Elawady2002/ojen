@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Globe } from 'lucide-react';
+import { Globe, Menu } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -88,7 +88,7 @@ const Header = () => {
           gap: 40px;
         }
         .logo {
-          height: 85px;
+          height: 55px;
           object-fit: contain;
           flex-shrink: 0;
           margin-right: 15px;
@@ -199,7 +199,7 @@ const Header = () => {
         @media (max-width: 992px) {
           .nav-links { display: none; }
           .main-header { height: 90px; }
-          .logo { height: 60px; }
+          .logo { height: 45px; }
         }
       `}} />
     </header>

@@ -2,8 +2,8 @@ export const journeysData = [
   {
     id: 'eq-mastery',
     title: 'EQ Mastery',
-    img: '/assets/eq-mastery.png',
-    color: '#6F4871',
+    img: '/assets/cards/EQ Mastery.png',
+    color: '#8E362D',
     duration: '30 يوماً',
     description: 'رحلة متكاملة لتطوير الذكاء العاطفي والتحكم في المشاعر وقيادة الذات والآخرين بفعالية.',
     tagline: 'الذكاء العاطفي القيادي',
@@ -35,8 +35,8 @@ export const journeysData = [
   {
     id: 'customer-delight',
     title: 'Customer Delight',
-    img: '/assets/customer-delight.png',
-    color: '#48A2B5',
+    img: '/assets/cards/CUSTOMER DELIGHT.png',
+    color: '#05B2EC',
     duration: '30 يوماً',
     description: 'تعلم أسرار إسعاد العملاء وبناء ولاء طويل الأمد من خلال تجارب عملاء استثنائية.',
     tagline: 'إسعاد العملاء المستدام',
@@ -68,8 +68,8 @@ export const journeysData = [
   {
     id: 'speak-to-lead',
     title: 'Speak to Lead',
-    img: '/assets/speak-to-lead.png',
-    color: '#7C1C1B',
+    img: '/assets/cards/SPEAK TO LEAD.png',
+    color: '#98E5FF',
     duration: '30 يوماً',
     description: 'طور مهارات التواصل القيادي والكاريزما والإقناع لتكون متحدثاً مؤثراً في أي محفل.',
     tagline: 'رحلة التطور القيادي',
@@ -103,8 +103,8 @@ export const journeysData = [
   {
     id: 'loyalty-30',
     title: 'Employee Loyalty',
-    img: '/assets/loyalty-30.png',
-    color: '#2D4360',
+    img: '/assets/cards/EMPLOYEE LOYALTY 30 DAYS.png',
+    color: '#A28BF5',
     duration: '30 يوماً',
     description: 'استراتيجيات بناء بيئة عمل محفزة تضمن ولاء الموظفين وانتمائهم للمؤسسة في 30 يوماً.',
     tagline: 'بناء الانتماء المؤسسي - المستوى الأول',
@@ -136,8 +136,8 @@ export const journeysData = [
   {
     id: 'onboarding-excellence',
     title: 'Employee Onboarding',
-    img: '/assets/onboarding-excellence.png',
-    color: '#986000',
+    img: '/assets/cards/EMPLOYEE ONBOARDING.png',
+    color: '#C17733',
     duration: '30 يوماً',
     description: 'تصميم تجربة استقبال الموظفين الجدد بطريقة احترافية تضمن اندماجهم السريع.',
     tagline: 'الاندماج السريع والفعال',
@@ -169,8 +169,8 @@ export const journeysData = [
   {
     id: 'leadership-habits',
     title: 'Leadership Journey Habits',
-    img: '/assets/leadership-habits.png',
-    color: '#C0522C',
+    img: '/assets/cards/LEDERSHIP JOURNEY HABITS 90 DAYS.png',
+    color: '#936F5A',
     duration: '90 يوماً',
     description: 'بناء العادات القيادية اليومية التي تصنع قادة المستقبل وتضمن النجاح المستدام.',
     tagline: 'عادات القادة المتميزين',
@@ -201,34 +201,26 @@ export const journeysData = [
   },
   {
     id: 'loyalty-90',
-    title: 'Employee Loyalty',
-    img: '/assets/loyalty-90.png',
-    color: '#45775F',
-    duration: '90 يوماً',
-    description: 'برنامج مكثف لترسيخ الولاء المؤسسي وتحقيق أعلى مستويات الالتزام في 90 يوماً.',
+    title: 'ولاء الموظفين (90 يوم)',
+    img: '/assets/cards/EMPLOYEE LOYALTY 90 DAYS.png',
+    color: '#A28BF5',
+    duration: '90 يوم',
+    description: 'رحلة ولاء الموظفين هي برنامج لمدة 90 يوماً مصمم خصيصاً للقادة لإتقان مهارات الحفاظ على الكفاءات من خلال التحفيز، التقدير، والإدارة المتمحورة حول الإنسان.',
     tagline: 'الاندماج المؤسسي العميق - المستوى المتقدم',
     goals: [
-      'ترسيخ قيم المؤسسة في نفوس الموظفين',
-      'بناء نظام إرشاد وتوجيه مستدام للموظفين',
-      'تعزيز العلاقة النفسية القوية مع العمل',
-      'خلق سفراء للعلامة التجارية داخل المؤسسة'
+      'القيادة المؤثرة: تطوير قادة يلهمون فريقهم ويصنعون ولاءً مؤسسياً حقيقياً.',
+      'استراتيجية الحفاظ على المواهب: تنفيذ أنظمة طويلة الأمد لتقليل تسرب الكفاءات ورفع الاستقرار.',
+      'المشاركة والتقدير: بناء ثقافة عمل قائمة على التقدير والاعتراف بقيمة الموظف.',
+      'الإدارة المتناغمة: إتقان منهجيات القيادة الإنسانية والتعاطف لتحقيق الأهداف المشتركة.'
     ],
     sections: {
       target: {
         title: 'الفئة المستهدفة',
-        content: 'مدراء الموارد البشرية والقيادات العليا.'
+        content: 'قادة الفرق والمشاريع الساعين لتقليل دوران الموظفين، شركاء أعمال الموارد البشرية، والمدراء التنفيذيون المهتمون ببناء ثقافة مؤسسية جذابة.'
       },
       outcomes: {
-        title: 'مخرجات البرنامج',
-        content: 'نظام ولاء متكامل وانخفاض جذري في خسارة الكفاءات.'
-      },
-      content: {
-        title: 'محتوى الرحلة',
-        content: 'ورش عمل استراتيجية، خطط طويلة الأمد، ومتابعة ربع سنوية.'
-      },
-      pillars: {
-        title: 'محاور البرنامج',
-        content: 'القيادة بالقيم، التطور المهني، التوازن العملي، وبناء الهوية.'
+        title: 'الأثر المؤسسي',
+        content: 'زيادة الإنتاجية من خلال رفع الروح المعنوية، جذب أفضل المواهب، وبناء روابط مهنية مستدامة تصمد أمام التحديات.'
       }
     }
   }

@@ -136,7 +136,7 @@ const Footer = () => {
         }
         
         .footer-logo-img {
-          height: 75px;
+          height: 50px;
           object-fit: contain;
           filter: drop-shadow(0 0 15px rgba(217, 185, 89, 0.2));
         }

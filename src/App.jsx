@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import JourneysGrid from './pages/JourneysGrid';
-import JourneyDetail from './pages/JourneyDetail';
 import { About, Solutions, Blog, Contact, Login, Register } from './pages/Placeholders';
 import './index.css';
 
@@ -16,7 +15,6 @@ function App() {
           <Routes>
             <Route path="/" element={<JourneysGrid />} />
             <Route path="/journeys" element={<JourneysGrid />} />
-            <Route path="/journey/:id" element={<JourneyDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/blog" element={<Blog />} />
@@ -32,3 +30,4 @@ function App() {
 }
 
 export default App;
+
