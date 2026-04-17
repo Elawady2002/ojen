@@ -53,6 +53,34 @@ const translations = {
     'footer.aboutText':     'أوجن - خبراء جودة الحياة المؤسسية - هي مؤسسة خدمات مهنية مقرها الإمارات، متخصصة في جودة الحياة المؤسسية، والتطوير المؤسسي، وتنمية رأس المال البشري.',
     'footer.copyright':     'جميع الحقوق محفوظة © Ojen 2026',
     'lang.switch':          'EN',
+    'card.eq-mastery.tagline':              'الذكاء العاطفي القيادي',
+    'card.eq-mastery.duration':             '30 يوماً',
+    'card.eq-mastery.focus':               'فهم المشاعر وإدارتها بذكاء',
+    'card.eq-mastery.impact':              'تحسن ملحوظ في جودة العلاقات والقيادة وزيادة الوعي الذاتي.',
+    'card.customer-delight.tagline':        'إسعاد العملاء المستدام',
+    'card.customer-delight.duration':       '30 يوماً',
+    'card.customer-delight.focus':         'فهم احتياجات العملاء العميقة',
+    'card.customer-delight.impact':        'زيادة معدل رضا العملاء وولائهم للعلامة التجارية.',
+    'card.speak-to-lead.tagline':           'رحلة التطور القيادي',
+    'card.speak-to-lead.duration':          '30 يوماً',
+    'card.speak-to-lead.focus':            'بناء أسلوب تواصل قوي واثق ومؤثر',
+    'card.speak-to-lead.impact':           'القدرة على الحديث بثقة أمام الجمهور وبناء حضور قيادي قوي.',
+    'card.loyalty-30.tagline':              'بناء الانتماء المؤسسي - المستوى الأول',
+    'card.loyalty-30.duration':             '30 يوماً',
+    'card.loyalty-30.focus':               'فهم دوافع الموظفين الحديثة',
+    'card.loyalty-30.impact':              'بيئة عمل أكثر استقراراً وانتاجية مع موظفين مخلصين.',
+    'card.onboarding-excellence.tagline':   'الاندماج السريع والفعال',
+    'card.onboarding-excellence.duration':  '30 يوماً',
+    'card.onboarding-excellence.focus':    'تصميم رحلة الموظف الجديد (Days 1-90)',
+    'card.onboarding-excellence.impact':   'عملية استقبال سلسة تزيد من حماس الموظفين للعمل.',
+    'card.leadership-habits.tagline':       'عادات القادة المتميزين',
+    'card.leadership-habits.duration':      '90 يوماً',
+    'card.leadership-habits.focus':        'تحديد العادات القيادية المؤثرة',
+    'card.leadership-habits.impact':       'تحول في السلوك اليومي يؤدي لنتائج قيادية استثنائية.',
+    'card.loyalty-90.tagline':              'الاندماج المؤسسي العميق - المستوى المتقدم',
+    'card.loyalty-90.duration':             '90 يوم',
+    'card.loyalty-90.focus':               'القيادة المؤثرة: تطوير قادة يلهمون فريقهم ويصنعون ولاءً مؤسسياً حقيقياً.',
+    'card.loyalty-90.impact':              'زيادة الإنتاجية من خلال رفع الروح المعنوية وبناء روابط مهنية مستدامة.',
   },
   en: {
     'nav.home':             'Home',
@@ -103,6 +131,34 @@ const translations = {
     'footer.aboutText':     'Ojen - Corporate Life Quality Experts - is a professional services institution based in the UAE, specializing in corporate life quality, institutional development, and human capital development.',
     'footer.copyright':     '© Ojen 2026 All Rights Reserved',
     'lang.switch':          'عربي',
+    'card.eq-mastery.tagline':              'Leadership Emotional Intelligence',
+    'card.eq-mastery.duration':             '30 Days',
+    'card.eq-mastery.focus':               'Understand and manage emotions intelligently',
+    'card.eq-mastery.impact':              'Noticeable improvement in relationship quality, leadership, and self-awareness.',
+    'card.customer-delight.tagline':        'Sustainable Customer Happiness',
+    'card.customer-delight.duration':       '30 Days',
+    'card.customer-delight.focus':         'Understand deep customer needs',
+    'card.customer-delight.impact':        'Increased customer satisfaction rate and brand loyalty.',
+    'card.speak-to-lead.tagline':           'Leadership Development Journey',
+    'card.speak-to-lead.duration':          '30 Days',
+    'card.speak-to-lead.focus':            'Build a strong, confident, and impactful communication style',
+    'card.speak-to-lead.impact':           'Ability to speak confidently in public and build a strong leadership presence.',
+    'card.loyalty-30.tagline':              'Building Institutional Belonging — Level 1',
+    'card.loyalty-30.duration':             '30 Days',
+    'card.loyalty-30.focus':               'Understand modern employee motivations',
+    'card.loyalty-30.impact':              'A more stable and productive work environment with loyal employees.',
+    'card.onboarding-excellence.tagline':   'Fast and Effective Integration',
+    'card.onboarding-excellence.duration':  '30 Days',
+    'card.onboarding-excellence.focus':    'Design the new employee journey (Days 1–90)',
+    'card.onboarding-excellence.impact':   'A smooth onboarding process that boosts employee enthusiasm.',
+    'card.leadership-habits.tagline':       'Habits of Outstanding Leaders',
+    'card.leadership-habits.duration':      '90 Days',
+    'card.leadership-habits.focus':        'Identify impactful leadership habits',
+    'card.leadership-habits.impact':       'Behavioral transformation leading to exceptional leadership results.',
+    'card.loyalty-90.tagline':              'Deep Institutional Integration — Advanced Level',
+    'card.loyalty-90.duration':             '90 Days',
+    'card.loyalty-90.focus':               'Influential Leadership: Develop leaders who inspire their team and create genuine institutional loyalty.',
+    'card.loyalty-90.impact':              'Increased productivity through elevated morale and building sustainable professional bonds.',
   }
 };
 
@@ -128,7 +184,6 @@ function setLanguage(lang) {
   html.lang = lang;
   html.dir = lang === 'ar' ? 'rtl' : 'ltr';
   applyTranslations();
-  renderCards();
   // Re-render open sidebar in new language
   const sidebar = document.getElementById('sidebar');
   if (!sidebar.hidden && sidebar.dataset.journeyId) {
@@ -444,68 +499,6 @@ const icons = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// RENDER CARDS
-// ─────────────────────────────────────────────────────────────────────────────
-function renderCards() {
-  const grid = document.getElementById('cards-grid');
-  if (!grid) return;
-
-  grid.innerHTML = '';
-  grid.innerHTML = journeysData.map((journey, index) => {
-    const loc = jl(journey);
-    const colorRgb = hexToRgb(journey.color);
-    const outcomeText = loc.sections?.outcomes?.content ?? '';
-    const focusText = loc.goals[0] ?? loc.tagline ?? '';
-    const delay = index % 4;
-
-    return `
-      <div class="jg-card-slot" data-delay="${delay}" data-id="${journey.id}">
-        <div
-          class="jc-outer"
-          data-id="${journey.id}"
-          style="--theme-color:${journey.color}; --theme-rgb:${colorRgb};"
-        >
-          <div class="jc-flipper" data-flipper>
-            <div class="jc-face jc-front">
-              <img src="${journey.img}" alt="${loc.title}" class="jc-img" loading="lazy" />
-              <div class="jc-shine"></div>
-            </div>
-            <div class="jc-face jc-back">
-              <div class="jc-back-inner">
-                <div class="jc-back-header">
-                  <span class="jc-back-tag">${loc.tagline}</span>
-                  <h3 class="jc-back-title" style="color:var(--theme-color)">${loc.title}</h3>
-                </div>
-                <div class="jc-back-stats">
-                  <div class="jc-stat-item">
-                    <span class="jc-stat-label">${t('card.duration')}</span>
-                    <span class="jc-stat-value">${loc.duration}</span>
-                  </div>
-                  <div class="jc-stat-item">
-                    <span class="jc-stat-label">${t('card.focus')}</span>
-                    <span class="jc-stat-value">${focusText}</span>
-                  </div>
-                  <div class="jc-stat-item">
-                    <span class="jc-stat-label">${t('card.impact')}</span>
-                    <span class="jc-stat-value" style="font-size:0.75rem;opacity:0.7">${outcomeText}</span>
-                  </div>
-                </div>
-                <div class="jc-back-cta">
-                  <button class="jc-cta-btn" data-journey-id="${journey.id}">${t('card.explore')}</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // Run entrance animations after paint
-  requestAnimationFrame(() => initCardAnimations());
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
 // SIDEBAR
 // ─────────────────────────────────────────────────────────────────────────────
 function openSidebar(journey) {
@@ -709,7 +702,6 @@ document.addEventListener('DOMContentLoaded', () => {
   html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
   applyTranslations();
 
-  renderCards();
   initCardAnimations();
 
   // Language switcher
