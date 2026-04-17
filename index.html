@@ -21,34 +21,34 @@
           <img src="assets/logo.png" alt="Ojen Logo" class="logo" />
         </a>
         <nav class="nav-links">
-          <a href="index.html" class="nav-link active">الرئيسية</a>
-          <a href="#" class="nav-link">عن المنصة</a>
-          <a href="#" class="nav-link">الحلول</a>
-          <a href="index.html" class="nav-link">رحلات التطور</a>
-          <a href="#" class="nav-link">المدونة</a>
-          <a href="#" class="nav-link">تواصل معنا</a>
+          <a href="index.html" class="nav-link active" data-i18n="nav.home">الرئيسية</a>
+          <a href="#" class="nav-link" data-i18n="nav.about">عن المنصة</a>
+          <a href="#" class="nav-link" data-i18n="nav.solutions">الحلول</a>
+          <a href="index.html" class="nav-link" data-i18n="nav.journeys">رحلات التطور</a>
+          <a href="#" class="nav-link" data-i18n="nav.blog">المدونة</a>
+          <a href="#" class="nav-link" data-i18n="nav.contact">تواصل معنا</a>
         </nav>
       </div>
 
       <div class="header-left">
         <div class="auth-links">
-          <a href="#" class="auth-link-alt">تسجيل</a>
+          <a href="#" class="auth-link-alt" data-i18n="auth.register">تسجيل</a>
           <span class="auth-slash">/</span>
-          <a href="#" class="auth-link-alt">تسجيل الدخول</a>
+          <a href="#" class="auth-link-alt" data-i18n="auth.login">تسجيل الدخول</a>
         </div>
 
-        <div class="lang-switcher">
+        <div class="lang-switcher" id="lang-switcher" role="button" tabindex="0" aria-label="Switch language">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <line x1="2" y1="12" x2="22" y2="12"/>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
           </svg>
-          <span>EN</span>
+          <span data-i18n="lang.switch">EN</span>
         </div>
 
         <div class="support-section">
           <div class="support-text">
-            <span class="support-label">هل تحتاج مساعدة؟ اتصل بنا:</span>
+            <span class="support-label" data-i18n="support.label">هل تحتاج مساعدة؟ اتصل بنا:</span>
             <a href="tel:00971553033998" class="phone-number">00971553033998</a>
           </div>
           <div class="phone-icon-svg">
@@ -90,8 +90,8 @@
         </div>
         <div class="jg-hero-overlay"></div>
         <div class="container jg-hero-inner">
-          <h1 class="jg-hero-title">رحلات التطور</h1>
-          <p class="jg-hero-sub">
+          <h1 class="jg-hero-title" data-i18n="hero.title">رحلات التطور</h1>
+          <p class="jg-hero-sub" data-i18n="hero.sub">
             اكتشف رحلتك نحو القمة من خلال برامجنا التدريبية المكثفة والمصممة خصيصاً لتطوير مهاراتك القيادية.
           </p>
           <div class="jg-hero-rule"></div>
@@ -116,14 +116,14 @@
 
       <div class="footer-top-row">
         <div class="contact-item left">
-          <span class="label">إرسال بريد إلكتروني</span>
+          <span class="label" data-i18n="footer.emailLabel">إرسال بريد إلكتروني</span>
           <a href="mailto:info@theojen.com" class="value">info@theojen.com</a>
         </div>
         <div class="footer-logo-center">
           <img src="assets/logo.png" alt="Ojen Logo" class="footer-logo-img" />
         </div>
         <div class="contact-item right">
-          <span class="label">هل لديك أي سؤال؟</span>
+          <span class="label" data-i18n="footer.qLabel">هل لديك أي سؤال؟</span>
           <a href="tel:00971553033998" class="value">00971553033998</a>
         </div>
       </div>
@@ -133,14 +133,14 @@
       <div class="footer-grid-container">
 
         <div class="footer-col newsletter-col">
-          <h4>النشرة الإخبارية</h4>
-          <p class="footer-subtext">اشترك في نشرتنا الإخبارية للحصول على آخر التحديثات</p>
+          <h4 data-i18n="footer.newsletter">النشرة الإخبارية</h4>
+          <p class="footer-subtext" data-i18n="footer.newsletterSub">اشترك في نشرتنا الإخبارية للحصول على آخر التحديثات</p>
           <div class="newsletter-wrapper">
-            <input type="email" placeholder="أدخل بريدك الإلكتروني" class="newsletter-input" />
-            <button class="newsletter-submit-btn">اشتراك</button>
+            <input type="email" placeholder="أدخل بريدك الإلكتروني" class="newsletter-input" data-i18n-placeholder="footer.emailInput" />
+            <button class="newsletter-submit-btn" data-i18n="footer.subscribeBtn">اشتراك</button>
           </div>
           <div class="payment-section">
-            <h5 class="payment-title">طرق الدفع</h5>
+            <h5 class="payment-title" data-i18n="footer.payTitle">طرق الدفع</h5>
             <div class="payment-icons-list">
               <img src="assets/payments.webp" alt="Payment methods" class="pay-icon" />
             </div>
@@ -148,28 +148,28 @@
         </div>
 
         <div class="footer-col">
-          <h4>قانوني</h4>
+          <h4 data-i18n="footer.legal">قانوني</h4>
           <ul class="footer-links">
-            <li><a href="#">سياسة الخصوصية</a></li>
-            <li><a href="#">الشروط والاحكام</a></li>
-            <li><a href="#">الأسئلة الشائعة</a></li>
-            <li><a href="#">تواصل معنا</a></li>
+            <li><a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a></li>
+            <li><a href="#" data-i18n="footer.terms">الشروط والاحكام</a></li>
+            <li><a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a></li>
+            <li><a href="#" data-i18n="footer.contactLink">تواصل معنا</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>روابط سريعة</h4>
+          <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
           <ul class="footer-links">
-            <li><a href="index.html">رحلات التطور</a></li>
-            <li><a href="#">عن المنصة</a></li>
-            <li><a href="#">الحلول</a></li>
-            <li><a href="#">المدونة</a></li>
+            <li><a href="index.html" data-i18n="footer.journeysLink">رحلات التطور</a></li>
+            <li><a href="#" data-i18n="footer.aboutLink">عن المنصة</a></li>
+            <li><a href="#" data-i18n="footer.solutionsLink">الحلول</a></li>
+            <li><a href="#" data-i18n="footer.blogLink">المدونة</a></li>
           </ul>
         </div>
 
         <div class="footer-col about-col">
-          <h4>من نحن</h4>
-          <p class="about-text">
+          <h4 data-i18n="footer.about">من نحن</h4>
+          <p class="about-text" data-i18n="footer.aboutText">
             أوجن - خبراء جودة الحياة المؤسسية - هي مؤسسة خدمات مهنية مقرها الإمارات، متخصصة في جودة الحياة المؤسسية، والتطوير المؤسسي، وتنمية رأس المال البشري.
           </p>
           <div class="social-links-row">
@@ -208,7 +208,7 @@
       </div>
 
       <div class="footer-copyright-row">
-        <p>جميع الحقوق محفوظة © Ojen 2026</p>
+        <p data-i18n="footer.copyright">جميع الحقوق محفوظة © Ojen 2026</p>
       </div>
 
     </div>

@@ -1,145 +1,417 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// JOURNEY DATA
+// LANGUAGE SYSTEM
+// ─────────────────────────────────────────────────────────────────────────────
+let currentLang = localStorage.getItem('ojen-lang') || 'ar';
+
+const translations = {
+  ar: {
+    'nav.home':             'الرئيسية',
+    'nav.about':            'عن المنصة',
+    'nav.solutions':        'الحلول',
+    'nav.journeys':         'رحلات التطور',
+    'nav.blog':             'المدونة',
+    'nav.contact':          'تواصل معنا',
+    'auth.register':        'تسجيل',
+    'auth.login':           'تسجيل الدخول',
+    'support.label':        'هل تحتاج مساعدة؟ اتصل بنا:',
+    'hero.title':           'رحلات التطور',
+    'hero.sub':             'اكتشف رحلتك نحو القمة من خلال برامجنا التدريبية المكثفة والمصممة خصيصاً لتطوير مهاراتك القيادية.',
+    'card.duration':        'المدة',
+    'card.focus':           'التركيز',
+    'card.impact':          'الأثر',
+    'card.explore':         'اكتشف الرحلة',
+    'sidebar.plans':        'خطط الاشتراك',
+    'plan.basic':           'أساسي',
+    'plan.premium':         'مميز',
+    'plan.basicDesc':       'وصول كامل للمحتوى الأساسي طوال فترة البرنامج',
+    'plan.premDesc':        'كل المحتوى الأساسي + جلسة تدريب خاصة كل 30 يوم',
+    'plan.basicF1':         'بطاقات تدريبية يومية',
+    'plan.basicF2':         'تمارين عملية',
+    'plan.basicF3':         'محتوى كامل للرحلة',
+    'plan.premF1':          'كل محتوى الباقة الأساسية',
+    'plan.premF2':          'جلسة خاصة / 30 يوم',
+    'plan.premF3':          'دعم ذو أولوية',
+    'sidebar.cta':          'سجّل الآن في البرنامج',
+    'footer.emailLabel':    'إرسال بريد إلكتروني',
+    'footer.qLabel':        'هل لديك أي سؤال؟',
+    'footer.newsletter':    'النشرة الإخبارية',
+    'footer.newsletterSub': 'اشترك في نشرتنا الإخبارية للحصول على آخر التحديثات',
+    'footer.emailInput':    'أدخل بريدك الإلكتروني',
+    'footer.subscribeBtn':  'اشتراك',
+    'footer.payTitle':      'طرق الدفع',
+    'footer.legal':         'قانوني',
+    'footer.privacy':       'سياسة الخصوصية',
+    'footer.terms':         'الشروط والاحكام',
+    'footer.faq':           'الأسئلة الشائعة',
+    'footer.contactLink':   'تواصل معنا',
+    'footer.quickLinks':    'روابط سريعة',
+    'footer.journeysLink':  'رحلات التطور',
+    'footer.aboutLink':     'عن المنصة',
+    'footer.solutionsLink': 'الحلول',
+    'footer.blogLink':      'المدونة',
+    'footer.about':         'من نحن',
+    'footer.aboutText':     'أوجن - خبراء جودة الحياة المؤسسية - هي مؤسسة خدمات مهنية مقرها الإمارات، متخصصة في جودة الحياة المؤسسية، والتطوير المؤسسي، وتنمية رأس المال البشري.',
+    'footer.copyright':     'جميع الحقوق محفوظة © Ojen 2026',
+    'lang.switch':          'EN',
+  },
+  en: {
+    'nav.home':             'Home',
+    'nav.about':            'About',
+    'nav.solutions':        'Solutions',
+    'nav.journeys':         'Journeys',
+    'nav.blog':             'Blog',
+    'nav.contact':          'Contact Us',
+    'auth.register':        'Sign Up',
+    'auth.login':           'Log In',
+    'support.label':        'Need help? Call us:',
+    'hero.title':           'Development Journeys',
+    'hero.sub':             'Discover your path to the top through our intensive training programs designed to develop your leadership skills.',
+    'card.duration':        'Duration',
+    'card.focus':           'Focus',
+    'card.impact':          'Impact',
+    'card.explore':         'Explore Journey',
+    'sidebar.plans':        'Subscription Plans',
+    'plan.basic':           'Basic',
+    'plan.premium':         'Premium',
+    'plan.basicDesc':       'Full access to core content throughout the program',
+    'plan.premDesc':        'All basic content + private coaching session every 30 days',
+    'plan.basicF1':         'Daily training cards',
+    'plan.basicF2':         'Practical exercises',
+    'plan.basicF3':         'Full journey content',
+    'plan.premF1':          'All basic plan content',
+    'plan.premF2':          'Private session / 30 days',
+    'plan.premF3':          'Priority support',
+    'sidebar.cta':          'Register Now',
+    'footer.emailLabel':    'Send an Email',
+    'footer.qLabel':        'Have any questions?',
+    'footer.newsletter':    'Newsletter',
+    'footer.newsletterSub': 'Subscribe to our newsletter for the latest updates',
+    'footer.emailInput':    'Enter your email',
+    'footer.subscribeBtn':  'Subscribe',
+    'footer.payTitle':      'Payment Methods',
+    'footer.legal':         'Legal',
+    'footer.privacy':       'Privacy Policy',
+    'footer.terms':         'Terms & Conditions',
+    'footer.faq':           'FAQ',
+    'footer.contactLink':   'Contact Us',
+    'footer.quickLinks':    'Quick Links',
+    'footer.journeysLink':  'Journeys',
+    'footer.aboutLink':     'About',
+    'footer.solutionsLink': 'Solutions',
+    'footer.blogLink':      'Blog',
+    'footer.about':         'About Us',
+    'footer.aboutText':     'Ojen - Corporate Life Quality Experts - is a professional services institution based in the UAE, specializing in corporate life quality, institutional development, and human capital development.',
+    'footer.copyright':     '© Ojen 2026 All Rights Reserved',
+    'lang.switch':          'عربي',
+  }
+};
+
+function t(key) {
+  return (translations[currentLang] || translations.ar)[key] || key;
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const text = t(el.dataset.i18n);
+    if (text) el.textContent = text;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const text = t(el.dataset.i18nPlaceholder);
+    if (text) el.placeholder = text;
+  });
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('ojen-lang', lang);
+  const html = document.documentElement;
+  html.lang = lang;
+  html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  applyTranslations();
+  renderCards();
+  // Re-render open sidebar in new language
+  const sidebar = document.getElementById('sidebar');
+  if (!sidebar.hidden && sidebar.dataset.journeyId) {
+    const journey = journeysData.find(j => j.id === sidebar.dataset.journeyId);
+    if (journey) openSidebar(journey);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// JOURNEY DATA  (bilingual)
 // ─────────────────────────────────────────────────────────────────────────────
 const journeysData = [
   {
     id: 'eq-mastery',
-    title: 'EQ Mastery',
     img: 'assets/cards/EQ Mastery.png',
     color: '#8E362D',
-    duration: '30 يوماً',
-    tagline: 'الذكاء العاطفي القيادي',
-    goals: [
-      'فهم المشاعر وإدارتها بذكاء',
-      'بناء علاقات مهنية قوية',
-      'التحكم في الانفعالات تحت الضغط',
-      'تحفيز الذات والآخرين بفعالية'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'القادة والمدراء والراغبين في تحسين مهاراتهم في التعامل مع الآخرين.' },
-      outcomes: { title: 'مخرجات البرنامج', content: 'تحسن ملحوظ في جودة العلاقات والقيادة وزيادة الوعي الذاتي.' },
-      content:  { title: 'محتوى الرحلة',    content: 'محاضرات مسجلة، تطبيقات عملية يومية، ومنتديات نقاش.' },
-      pillars:  { title: 'محاور البرنامج',  content: 'الوعي الذاتي، إدارة الذات، الوعي الاجتماعي، وإدارة العلاقات.' }
+    ar: {
+      title: 'EQ Mastery',
+      duration: '30 يوماً',
+      tagline: 'الذكاء العاطفي القيادي',
+      goals: [
+        'فهم المشاعر وإدارتها بذكاء',
+        'بناء علاقات مهنية قوية',
+        'التحكم في الانفعالات تحت الضغط',
+        'تحفيز الذات والآخرين بفعالية'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'القادة والمدراء والراغبين في تحسين مهاراتهم في التعامل مع الآخرين.' },
+        outcomes: { title: 'مخرجات البرنامج', content: 'تحسن ملحوظ في جودة العلاقات والقيادة وزيادة الوعي الذاتي.' },
+        content:  { title: 'محتوى الرحلة',    content: 'محاضرات مسجلة، تطبيقات عملية يومية، ومنتديات نقاش.' },
+        pillars:  { title: 'محاور البرنامج',  content: 'الوعي الذاتي، إدارة الذات، الوعي الاجتماعي، وإدارة العلاقات.' }
+      }
+    },
+    en: {
+      title: 'EQ Mastery',
+      duration: '30 Days',
+      tagline: 'Leadership Emotional Intelligence',
+      goals: [
+        'Understand and manage emotions intelligently',
+        'Build strong professional relationships',
+        'Control reactions under pressure',
+        'Motivate yourself and others effectively'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'Leaders, managers, and those looking to improve interpersonal skills.' },
+        outcomes: { title: 'Program Outcomes', content: 'Noticeable improvement in relationship quality, leadership, and self-awareness.' },
+        content:  { title: 'Journey Content',  content: 'Recorded lectures, daily practical applications, and discussion forums.' },
+        pillars:  { title: 'Program Pillars',  content: 'Self-awareness, self-management, social awareness, and relationship management.' }
+      }
     }
   },
   {
     id: 'customer-delight',
-    title: 'Customer Delight',
     img: 'assets/cards/CUSTOMER DELIGHT.png',
     color: '#05B2EC',
-    duration: '30 يوماً',
-    tagline: 'إسعاد العملاء المستدام',
-    goals: [
-      'فهم احتياجات العملاء العميقة',
-      'تصميم تجارب عملاء لا تُنسى',
-      'التعامل مع الشكاوى باحترافية',
-      'بناء ثقافة خدمة العملاء في المؤسسة'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'فرق المبيعات وخدمة العملاء ومدراء العمليات.' },
-      outcomes: { title: 'مخرجات البرنامج', content: 'زيادة معدل رضا العملاء وولائهم للعلامة التجارية.' },
-      content:  { title: 'محتوى الرحلة',    content: 'سيناريوهات واقعية، تدريبات على حل المشكلات، ونماذج عالمية.' },
-      pillars:  { title: 'محاور البرنامج',  content: 'سيكولوجية العميل، تصميم الرحلة، التواصل الفعال، والتميز في الخدمة.' }
+    ar: {
+      title: 'Customer Delight',
+      duration: '30 يوماً',
+      tagline: 'إسعاد العملاء المستدام',
+      goals: [
+        'فهم احتياجات العملاء العميقة',
+        'تصميم تجارب عملاء لا تُنسى',
+        'التعامل مع الشكاوى باحترافية',
+        'بناء ثقافة خدمة العملاء في المؤسسة'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'فرق المبيعات وخدمة العملاء ومدراء العمليات.' },
+        outcomes: { title: 'مخرجات البرنامج', content: 'زيادة معدل رضا العملاء وولائهم للعلامة التجارية.' },
+        content:  { title: 'محتوى الرحلة',    content: 'سيناريوهات واقعية، تدريبات على حل المشكلات، ونماذج عالمية.' },
+        pillars:  { title: 'محاور البرنامج',  content: 'سيكولوجية العميل، تصميم الرحلة، التواصل الفعال، والتميز في الخدمة.' }
+      }
+    },
+    en: {
+      title: 'Customer Delight',
+      duration: '30 Days',
+      tagline: 'Sustainable Customer Happiness',
+      goals: [
+        'Understand deep customer needs',
+        'Design unforgettable customer experiences',
+        'Handle complaints professionally',
+        'Build a customer service culture in the organization'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'Sales teams, customer service, and operations managers.' },
+        outcomes: { title: 'Program Outcomes', content: 'Increased customer satisfaction rate and brand loyalty.' },
+        content:  { title: 'Journey Content',  content: 'Real-world scenarios, problem-solving exercises, and global models.' },
+        pillars:  { title: 'Program Pillars',  content: 'Customer psychology, journey design, effective communication, and service excellence.' }
+      }
     }
   },
   {
     id: 'speak-to-lead',
-    title: 'Speak to Lead',
     img: 'assets/cards/SPEAK TO LEAD.png',
     color: '#98E5FF',
-    duration: '30 يوماً',
-    tagline: 'رحلة التطور القيادي',
-    goals: [
-      'بناء أسلوب تواصل قوي واثق ومؤثر',
-      'رفع القدرة على الإقناع وصناعة تأثير إيجابي',
-      'تحسين الذكاء العاطفي في الحوار',
-      'تطوير جودة الإصغاء وبناء علاقة مع المستمع',
-      'إدارة التوتر والمواقف الحساسة بذكاء',
-      'استخدام نبرة الصوت ولغة الجسد بدقة'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'القادة، المدراء، رواد الأعمال، وكل من يسعى لتطوير مهارات تواصل قيادية استثنائية.' },
-      outcomes: { title: 'مخرجات البرنامج', content: 'القدرة على الحديث بثقة أمام الجمهور، إقناع الفريق، حل النزاعات، وبناء حضور قيادي قوي.' },
-      content:  { title: 'محتوى الرحلة',    content: '30 يوماً من التدريب المكتف، جلسات حية، تدريبات عملية، ومتابعة دقيقة للأداء.' },
-      pillars:  { title: 'محاور البرنامج',  content: 'الحوار القيادي، لغة الجسد، بناء الكاريزما، إدارة المشاعر، وفنون الإقناع.' }
+    ar: {
+      title: 'Speak to Lead',
+      duration: '30 يوماً',
+      tagline: 'رحلة التطور القيادي',
+      goals: [
+        'بناء أسلوب تواصل قوي واثق ومؤثر',
+        'رفع القدرة على الإقناع وصناعة تأثير إيجابي',
+        'تحسين الذكاء العاطفي في الحوار',
+        'تطوير جودة الإصغاء وبناء علاقة مع المستمع',
+        'إدارة التوتر والمواقف الحساسة بذكاء',
+        'استخدام نبرة الصوت ولغة الجسد بدقة'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'القادة، المدراء، رواد الأعمال، وكل من يسعى لتطوير مهارات تواصل قيادية استثنائية.' },
+        outcomes: { title: 'مخرجات البرنامج', content: 'القدرة على الحديث بثقة أمام الجمهور، إقناع الفريق، حل النزاعات، وبناء حضور قيادي قوي.' },
+        content:  { title: 'محتوى الرحلة',    content: '30 يوماً من التدريب المكثف، جلسات حية، تدريبات عملية، ومتابعة دقيقة للأداء.' },
+        pillars:  { title: 'محاور البرنامج',  content: 'الحوار القيادي، لغة الجسد، بناء الكاريزما، إدارة المشاعر، وفنون الإقناع.' }
+      }
+    },
+    en: {
+      title: 'Speak to Lead',
+      duration: '30 Days',
+      tagline: 'Leadership Development Journey',
+      goals: [
+        'Build a strong, confident, and impactful communication style',
+        'Enhance persuasion and create positive influence',
+        'Improve emotional intelligence in dialogue',
+        'Develop listening quality and build rapport with the audience',
+        'Manage tension and sensitive situations intelligently',
+        'Use voice tone and body language precisely'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'Leaders, managers, entrepreneurs, and anyone seeking to develop exceptional leadership communication skills.' },
+        outcomes: { title: 'Program Outcomes', content: 'Ability to speak confidently in public, persuade the team, resolve conflicts, and build a strong leadership presence.' },
+        content:  { title: 'Journey Content',  content: '30 days of intensive training, live sessions, practical exercises, and precise performance tracking.' },
+        pillars:  { title: 'Program Pillars',  content: 'Leadership dialogue, body language, building charisma, emotion management, and the art of persuasion.' }
+      }
     }
   },
   {
     id: 'loyalty-30',
-    title: 'Employee Loyalty',
     img: 'assets/cards/EMPLOYEE LOYALTY 30 DAYS.png',
     color: '#A28BF5',
-    duration: '30 يوماً',
-    tagline: 'بناء الانتماء المؤسسي - المستوى الأول',
-    goals: [
-      'فهم دوافع الموظفين الحديثة',
-      'تصميم برامج تقدير ومكافأة فعالة',
-      'بناء ثقة متبادلة بين الإدارة والموظفين',
-      'تقليل معدل دوران العمالة'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'موارد البشرية والمدراء التنفيذيين والمشرفين.' },
-      outcomes: { title: 'مخرجات البرنامج', content: 'بيئة عمل أكثر استقراراً وانتاجية مع موظفين مخلصين.' },
-      content:  { title: 'محتوى الرحلة',    content: 'أدوات قياس الولاء، خطط عمل تنفيذية، وأفضل الممارسات.' },
-      pillars:  { title: 'محاور البرنامج',  content: 'الثقافة المؤسسية، القيادة الخادمة، التحفيز، والاتصال الداخلي.' }
+    ar: {
+      title: 'Employee Loyalty',
+      duration: '30 يوماً',
+      tagline: 'بناء الانتماء المؤسسي - المستوى الأول',
+      goals: [
+        'فهم دوافع الموظفين الحديثة',
+        'تصميم برامج تقدير ومكافأة فعالة',
+        'بناء ثقة متبادلة بين الإدارة والموظفين',
+        'تقليل معدل دوران العمالة'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'موارد البشرية والمدراء التنفيذيين والمشرفين.' },
+        outcomes: { title: 'مخرجات البرنامج', content: 'بيئة عمل أكثر استقراراً وانتاجية مع موظفين مخلصين.' },
+        content:  { title: 'محتوى الرحلة',    content: 'أدوات قياس الولاء، خطط عمل تنفيذية، وأفضل الممارسات.' },
+        pillars:  { title: 'محاور البرنامج',  content: 'الثقافة المؤسسية، القيادة الخادمة، التحفيز، والاتصال الداخلي.' }
+      }
+    },
+    en: {
+      title: 'Employee Loyalty',
+      duration: '30 Days',
+      tagline: 'Building Institutional Belonging — Level 1',
+      goals: [
+        'Understand modern employee motivations',
+        'Design effective recognition and reward programs',
+        'Build mutual trust between management and employees',
+        'Reduce employee turnover rate'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'HR professionals, executive managers, and supervisors.' },
+        outcomes: { title: 'Program Outcomes', content: 'A more stable and productive work environment with loyal employees.' },
+        content:  { title: 'Journey Content',  content: 'Loyalty measurement tools, executive action plans, and best practices.' },
+        pillars:  { title: 'Program Pillars',  content: 'Corporate culture, servant leadership, motivation, and internal communication.' }
+      }
     }
   },
   {
     id: 'onboarding-excellence',
-    title: 'Employee Onboarding',
     img: 'assets/cards/EMPLOYEE ONBOARDING.png',
     color: '#C17733',
-    duration: '30 يوماً',
-    tagline: 'الاندماج السريع والفعال',
-    goals: [
-      'تصميم رحلة الموظف الجديد (Days 1-90)',
-      'توفير كل الأدوات اللازمة للنجاح المبكر',
-      'تسريع الوقت اللازم للوصول للكفاءة الإنتاجية',
-      'تقليل التوتر المرتبط بالبداية الجديدة'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'فرق العمل ومدراء الأقسام وفريق التوظيف.' },
-      outcomes: { title: 'مخرجات البرنامج', content: 'عملية استقبال سلسة تزيد من حماس الموظفين للعمل.' },
-      content:  { title: 'محتوى الرحلة',    content: 'قوائم مراجعة، نماذج رسائل ترحيب، وبرامج إرشاد.' },
-      pillars:  { title: 'محاور البرنامج',  content: 'ما قبل الوصول، اليوم الأول، الأسبوع الأول، وفترة التجربة.' }
+    ar: {
+      title: 'Employee Onboarding',
+      duration: '30 يوماً',
+      tagline: 'الاندماج السريع والفعال',
+      goals: [
+        'تصميم رحلة الموظف الجديد (Days 1-90)',
+        'توفير كل الأدوات اللازمة للنجاح المبكر',
+        'تسريع الوقت اللازم للوصول للكفاءة الإنتاجية',
+        'تقليل التوتر المرتبط بالبداية الجديدة'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'فرق العمل ومدراء الأقسام وفريق التوظيف.' },
+        outcomes: { title: 'مخرجات البرنامج', content: 'عملية استقبال سلسة تزيد من حماس الموظفين للعمل.' },
+        content:  { title: 'محتوى الرحلة',    content: 'قوائم مراجعة، نماذج رسائل ترحيب، وبرامج إرشاد.' },
+        pillars:  { title: 'محاور البرنامج',  content: 'ما قبل الوصول، اليوم الأول، الأسبوع الأول، وفترة التجربة.' }
+      }
+    },
+    en: {
+      title: 'Employee Onboarding',
+      duration: '30 Days',
+      tagline: 'Fast and Effective Integration',
+      goals: [
+        'Design the new employee journey (Days 1–90)',
+        'Provide all tools necessary for early success',
+        'Accelerate the time to reach productive efficiency',
+        'Reduce tension associated with new beginnings'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'Teams, department managers, and recruitment staff.' },
+        outcomes: { title: 'Program Outcomes', content: 'A smooth onboarding process that boosts employee enthusiasm.' },
+        content:  { title: 'Journey Content',  content: 'Checklists, welcome message templates, and mentorship programs.' },
+        pillars:  { title: 'Program Pillars',  content: 'Pre-arrival, first day, first week, and probation period.' }
+      }
     }
   },
   {
     id: 'leadership-habits',
-    title: 'Leadership Journey Habits',
     img: 'assets/cards/LEDERSHIP JOURNEY HABITS 90 DAYS.png',
     color: '#936F5A',
-    duration: '90 يوماً',
-    tagline: 'عادات القادة المتميزين',
-    goals: [
-      'تحديد العادات القيادية المؤثرة',
-      'بناء روتين يومي يدعم القيادة',
-      'التخلص من العادات القيادية السلبية',
-      'قياس مدى ثبات وتأثير العادة'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'القادة الحاليين والطموحين لبناء شخصية قيادية صلبة.' },
-      outcomes: { title: 'مخرجات البرنامج', content: 'تحول في السلوك اليومي يؤدي لنتائج قيادية استثنائية.' },
-      content:  { title: 'محتوى الرحلة',    content: 'مفكرة عادات، جلسات متابعة، وتمارين تثبيت السلوك.' },
-      pillars:  { title: 'محاور البرنامج',  content: 'الانضباط الذاتي، ترتيب الأولويات، قيادة الفريق، والتفكير المستمر.' }
+    ar: {
+      title: 'Leadership Journey Habits',
+      duration: '90 يوماً',
+      tagline: 'عادات القادة المتميزين',
+      goals: [
+        'تحديد العادات القيادية المؤثرة',
+        'بناء روتين يومي يدعم القيادة',
+        'التخلص من العادات القيادية السلبية',
+        'قياس مدى ثبات وتأثير العادة'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'القادة الحاليين والطموحين لبناء شخصية قيادية صلبة.' },
+        outcomes: { title: 'مخرجات البرنامج', content: 'تحول في السلوك اليومي يؤدي لنتائج قيادية استثنائية.' },
+        content:  { title: 'محتوى الرحلة',    content: 'مفكرة عادات، جلسات متابعة، وتمارين تثبيت السلوك.' },
+        pillars:  { title: 'محاور البرنامج',  content: 'الانضباط الذاتي، ترتيب الأولويات، قيادة الفريق، والتفكير المستمر.' }
+      }
+    },
+    en: {
+      title: 'Leadership Journey Habits',
+      duration: '90 Days',
+      tagline: 'Habits of Outstanding Leaders',
+      goals: [
+        'Identify impactful leadership habits',
+        'Build a daily routine that supports leadership',
+        'Eliminate negative leadership habits',
+        'Measure habit stability and impact'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'Current and aspiring leaders seeking to build a solid leadership character.' },
+        outcomes: { title: 'Program Outcomes', content: 'Behavioral transformation leading to exceptional leadership results.' },
+        content:  { title: 'Journey Content',  content: 'Habit journal, follow-up sessions, and behavior reinforcement exercises.' },
+        pillars:  { title: 'Program Pillars',  content: 'Self-discipline, priority setting, team leadership, and continuous thinking.' }
+      }
     }
   },
   {
     id: 'loyalty-90',
-    title: 'ولاء الموظفين (90 يوم)',
     img: 'assets/cards/EMPLOYEE LOYALTY 90 DAYS.png',
     color: '#A28BF5',
-    duration: '90 يوم',
-    tagline: 'الاندماج المؤسسي العميق - المستوى المتقدم',
-    goals: [
-      'القيادة المؤثرة: تطوير قادة يلهمون فريقهم ويصنعون ولاءً مؤسسياً حقيقياً.',
-      'استراتيجية الحفاظ على المواهب: تنفيذ أنظمة طويلة الأمد لتقليل تسرب الكفاءات ورفع الاستقرار.',
-      'المشاركة والتقدير: بناء ثقافة عمل قائمة على التقدير والاعتراف بقيمة الموظف.',
-      'الإدارة المتناغمة: إتقان منهجيات القيادة الإنسانية والتعاطف لتحقيق الأهداف المشتركة.'
-    ],
-    sections: {
-      target:   { title: 'الفئة المستهدفة', content: 'قادة الفرق والمشاريع الساعين لتقليل دوران الموظفين، شركاء أعمال الموارد البشرية، والمدراء التنفيذيون المهتمون ببناء ثقافة مؤسسية جذابة.' },
-      outcomes: { title: 'الأثر المؤسسي',   content: 'زيادة الإنتاجية من خلال رفع الروح المعنوية، جذب أفضل المواهب، وبناء روابط مهنية مستدامة تصمد أمام التحديات.' }
+    ar: {
+      title: 'Employee Loyalty (90 Days)',
+      duration: '90 يوم',
+      tagline: 'الاندماج المؤسسي العميق - المستوى المتقدم',
+      goals: [
+        'القيادة المؤثرة: تطوير قادة يلهمون فريقهم ويصنعون ولاءً مؤسسياً حقيقياً.',
+        'استراتيجية الحفاظ على المواهب: تنفيذ أنظمة طويلة الأمد لتقليل تسرب الكفاءات ورفع الاستقرار.',
+        'المشاركة والتقدير: بناء ثقافة عمل قائمة على التقدير والاعتراف بقيمة الموظف.',
+        'الإدارة المتناغمة: إتقان منهجيات القيادة الإنسانية والتعاطف لتحقيق الأهداف المشتركة.'
+      ],
+      sections: {
+        target:   { title: 'الفئة المستهدفة', content: 'قادة الفرق والمشاريع الساعين لتقليل دوران الموظفين، شركاء أعمال الموارد البشرية، والمدراء التنفيذيون المهتمون ببناء ثقافة مؤسسية جذابة.' },
+        outcomes: { title: 'الأثر المؤسسي',   content: 'زيادة الإنتاجية من خلال رفع الروح المعنوية، جذب أفضل المواهب، وبناء روابط مهنية مستدامة تصمد أمام التحديات.' }
+      }
+    },
+    en: {
+      title: 'Employee Loyalty (90 Days)',
+      duration: '90 Days',
+      tagline: 'Deep Institutional Integration — Advanced Level',
+      goals: [
+        'Influential Leadership: Develop leaders who inspire their team and create genuine institutional loyalty.',
+        'Talent Retention Strategy: Implement long-term systems to reduce talent drain and raise stability.',
+        'Engagement & Recognition: Build a work culture based on appreciation and recognizing employee value.',
+        'Harmonious Management: Master human leadership methodologies and empathy to achieve shared goals.'
+      ],
+      sections: {
+        target:   { title: 'Target Audience', content: 'Team and project leaders seeking to reduce employee turnover, HR business partners, and executive managers interested in building an attractive institutional culture.' },
+        outcomes: { title: 'Institutional Impact', content: 'Increased productivity through elevated morale, attracting top talent, and building sustainable professional bonds that withstand challenges.' }
+      }
     }
   }
 ];
@@ -154,14 +426,21 @@ function hexToRgb(hex) {
     : '197, 160, 89';
 }
 
-// SVG icons (Lucide-compatible paths)
+// Get localized journey fields
+function jl(journey) {
+  return journey[currentLang] || journey.ar;
+}
+
+// SVG icons
 const icons = {
   x: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
   clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
   users: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   target: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
   layers: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
-  trendingUp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`
+  trendingUp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
+  creditCard: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -171,10 +450,12 @@ function renderCards() {
   const grid = document.getElementById('cards-grid');
   if (!grid) return;
 
+  grid.innerHTML = '';
   grid.innerHTML = journeysData.map((journey, index) => {
+    const loc = jl(journey);
     const colorRgb = hexToRgb(journey.color);
-    const outcomeText = journey.sections?.outcomes?.content ?? '';
-    const focusText = journey.goals[0] ?? journey.tagline ?? '';
+    const outcomeText = loc.sections?.outcomes?.content ?? '';
+    const focusText = loc.goals[0] ?? loc.tagline ?? '';
     const delay = index % 4;
 
     return `
@@ -186,31 +467,31 @@ function renderCards() {
         >
           <div class="jc-flipper" data-flipper>
             <div class="jc-face jc-front">
-              <img src="${journey.img}" alt="${journey.title}" class="jc-img" loading="lazy" />
+              <img src="${journey.img}" alt="${loc.title}" class="jc-img" loading="lazy" />
               <div class="jc-shine"></div>
             </div>
             <div class="jc-face jc-back">
               <div class="jc-back-inner">
                 <div class="jc-back-header">
-                  <span class="jc-back-tag">${journey.tagline}</span>
-                  <h3 class="jc-back-title" style="color:var(--theme-color)">${journey.title}</h3>
+                  <span class="jc-back-tag">${loc.tagline}</span>
+                  <h3 class="jc-back-title" style="color:var(--theme-color)">${loc.title}</h3>
                 </div>
                 <div class="jc-back-stats">
                   <div class="jc-stat-item">
-                    <span class="jc-stat-label">المدة</span>
-                    <span class="jc-stat-value">${journey.duration}</span>
+                    <span class="jc-stat-label">${t('card.duration')}</span>
+                    <span class="jc-stat-value">${loc.duration}</span>
                   </div>
                   <div class="jc-stat-item">
-                    <span class="jc-stat-label">التركيز</span>
+                    <span class="jc-stat-label">${t('card.focus')}</span>
                     <span class="jc-stat-value">${focusText}</span>
                   </div>
                   <div class="jc-stat-item">
-                    <span class="jc-stat-label">الأثر</span>
+                    <span class="jc-stat-label">${t('card.impact')}</span>
                     <span class="jc-stat-value" style="font-size:0.75rem;opacity:0.7">${outcomeText}</span>
                   </div>
                 </div>
                 <div class="jc-back-cta">
-                  <button class="jc-cta-btn" data-journey-id="${journey.id}">اكتشف الرحلة</button>
+                  <button class="jc-cta-btn" data-journey-id="${journey.id}">${t('card.explore')}</button>
                 </div>
               </div>
             </div>
@@ -219,17 +500,23 @@ function renderCards() {
       </div>
     `;
   }).join('');
+
+  // Run entrance animations after paint
+  requestAnimationFrame(() => initCardAnimations());
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SIDEBAR
 // ─────────────────────────────────────────────────────────────────────────────
 function openSidebar(journey) {
-  const { title, tagline, color, duration, goals = [], sections = {} } = journey;
+  const loc = jl(journey);
+  const { color } = journey;
+  const colorRgb = hexToRgb(color);
+  const { title, tagline, duration, goals = [], sections = {} } = loc;
 
   const goalsHTML = goals.length
     ? `<div class="jsb-section">
-        <div class="jsb-section-label">${icons.target}<span>الأهداف</span></div>
+        <div class="jsb-section-label">${icons.target}<span>${t('card.focus') === 'التركيز' ? 'الأهداف' : 'Goals'}</span></div>
         <ul class="jsb-goals">
           ${goals.map(g => `
             <li class="jsb-goal-item">
@@ -261,13 +548,45 @@ function openSidebar(journey) {
       </div>`
     : '';
 
+  const plansHTML = `
+    <div class="jsb-section">
+      <div class="jsb-section-label">${icons.creditCard}<span>${t('sidebar.plans')}</span></div>
+      <div class="jsb-plans-grid">
+
+        <div class="jsb-plan-card jsb-plan-basic" data-plan="basic" role="button" tabindex="0" style="--plan-color:${color}; --plan-rgb:${colorRgb}">
+          <div class="jsb-plan-check-wrap">${icons.check}</div>
+          <span class="jsb-plan-badge jsb-plan-badge--basic">${t('plan.basic')}</span>
+          <p class="jsb-plan-desc">${t('plan.basicDesc')}</p>
+          <ul class="jsb-plan-features">
+            <li>${t('plan.basicF1')}</li>
+            <li>${t('plan.basicF2')}</li>
+            <li>${t('plan.basicF3')}</li>
+          </ul>
+        </div>
+
+        <div class="jsb-plan-card jsb-plan-premium" data-plan="premium" role="button" tabindex="0" style="--plan-color:${color}; --plan-rgb:${colorRgb}">
+          <div class="jsb-plan-check-wrap">${icons.check}</div>
+          <span class="jsb-plan-badge jsb-plan-badge--premium">${t('plan.premium')}</span>
+          <p class="jsb-plan-desc">${t('plan.premDesc')}</p>
+          <ul class="jsb-plan-features">
+            <li>${t('plan.premF1')}</li>
+            <li>${t('plan.premF2')}</li>
+            <li>${t('plan.premF3')}</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  `;
+
   const sidebar = document.getElementById('sidebar');
+  sidebar.dataset.journeyId = journey.id;
   sidebar.innerHTML = `
     <div class="jsb-wrap">
       <div class="jsb-card">
         <div class="jsb-topbar" style="background:linear-gradient(90deg,transparent,${color},transparent)"></div>
 
-        <button class="jsb-close" id="jsb-close" aria-label="إغلاق">
+        <button class="jsb-close" id="jsb-close" aria-label="Close">
           ${icons.x}
         </button>
 
@@ -290,11 +609,12 @@ function openSidebar(journey) {
           ${goalsHTML}
           ${pillarsHTML}
           ${outcomesHTML}
+          ${plansHTML}
         </div>
 
         <div class="jsb-cta">
           <button class="jsb-cta-btn" style="background:${color};box-shadow:0 6px 20px rgba(0,0,0,0.35)">
-            سجّل الآن في البرنامج
+            ${t('sidebar.cta')}
           </button>
         </div>
       </div>
@@ -306,6 +626,29 @@ function openSidebar(journey) {
   document.body.style.overflow = 'hidden';
 
   document.getElementById('jsb-close').addEventListener('click', closeSidebar);
+
+  // Plan selection
+  let selectedPlan = null;
+  const planCards = sidebar.querySelectorAll('.jsb-plan-card[data-plan]');
+  const ctaBtn = sidebar.querySelector('.jsb-cta-btn');
+
+  planCards.forEach(card => {
+    card.addEventListener('click', () => {
+      planCards.forEach(c => c.classList.remove('is-selected'));
+      card.classList.add('is-selected');
+      selectedPlan = card.dataset.plan;
+      ctaBtn.dataset.selectedPlan = selectedPlan;
+    });
+  });
+
+  ctaBtn.addEventListener('click', () => {
+    if (!selectedPlan) {
+      planCards.forEach(c => c.classList.add('no-plan-shake'));
+      setTimeout(() => planCards.forEach(c => c.classList.remove('no-plan-shake')), 500);
+      return;
+    }
+    console.log('Register with plan:', selectedPlan, 'journey:', journey.id);
+  });
 }
 
 function closeSidebar() {
@@ -320,7 +663,6 @@ function closeSidebar() {
 let flippedCardId = null;
 
 function handleCardClick(e) {
-  // Don't flip if clicking the CTA button
   if (e.target.closest('.jc-cta-btn')) return;
 
   const outer = e.currentTarget;
@@ -331,7 +673,6 @@ function handleCardClick(e) {
     flipper.classList.remove('is-flipped');
     flippedCardId = null;
   } else {
-    // Unflip previously flipped card
     if (flippedCardId) {
       const prev = document.querySelector(`.jc-outer[data-id="${flippedCardId}"] [data-flipper]`);
       if (prev) prev.classList.remove('is-flipped');
@@ -342,7 +683,7 @@ function handleCardClick(e) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// INTERSECTION OBSERVER (card entrance animations)
+// INTERSECTION OBSERVER
 // ─────────────────────────────────────────────────────────────────────────────
 function initCardAnimations() {
   const slots = document.querySelectorAll('.jg-card-slot');
@@ -362,14 +703,33 @@ function initCardAnimations() {
 // INIT
 // ─────────────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Render cards
+  // Apply saved language on load
+  const html = document.documentElement;
+  html.lang = currentLang;
+  html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  applyTranslations();
+
   renderCards();
   initCardAnimations();
 
-  // Card click events (delegation on grid)
+  // Language switcher
+  const langSwitcher = document.getElementById('lang-switcher');
+  if (langSwitcher) {
+    langSwitcher.addEventListener('click', () => {
+      setLanguage(currentLang === 'ar' ? 'en' : 'ar');
+      initCardAnimations();
+    });
+    langSwitcher.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        langSwitcher.click();
+      }
+    });
+  }
+
+  // Card click events
   const grid = document.getElementById('cards-grid');
   grid.addEventListener('click', (e) => {
-    // CTA button → open sidebar
     const ctaBtn = e.target.closest('.jc-cta-btn');
     if (ctaBtn) {
       e.stopPropagation();
@@ -379,7 +739,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Card click → flip (mobile)
     const outer = e.target.closest('.jc-outer');
     if (outer) handleCardClick({ currentTarget: outer, target: e.target });
   });
