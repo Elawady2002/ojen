@@ -626,11 +626,6 @@ function openSidebar(journey) {
           ${plansHTML}
         </div>
 
-        <div class="jsb-cta">
-          <button class="jsb-cta-btn" style="background:${color};box-shadow:0 6px 20px rgba(0,0,0,0.35)">
-            ${t('sidebar.cta')}
-          </button>
-        </div>
       </div>
     </div>
   `;
@@ -641,27 +636,13 @@ function openSidebar(journey) {
 
   document.getElementById('jsb-close').addEventListener('click', closeSidebar);
 
-  // Plan selection
-  let selectedPlan = null;
+  // Plan cards — each opens its own modal directly on click
   const planCards = sidebar.querySelectorAll('.jsb-plan-card[data-plan]');
-  const ctaBtn = sidebar.querySelector('.jsb-cta-btn');
 
   planCards.forEach(card => {
     card.addEventListener('click', () => {
-      planCards.forEach(c => c.classList.remove('is-selected'));
-      card.classList.add('is-selected');
-      selectedPlan = card.dataset.plan;
-      ctaBtn.dataset.selectedPlan = selectedPlan;
+      openPricingModal(journey, card.dataset.plan);
     });
-  });
-
-  ctaBtn.addEventListener('click', () => {
-    if (!selectedPlan) {
-      planCards.forEach(c => c.classList.add('no-plan-shake'));
-      setTimeout(() => planCards.forEach(c => c.classList.remove('no-plan-shake')), 500);
-      return;
-    }
-    openPricingModal(journey, selectedPlan);
   });
 }
 
