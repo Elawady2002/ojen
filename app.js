@@ -32,6 +32,13 @@ const translations = {
     'plan.premF2':          'جلسة خاصة / 30 يوم',
     'plan.premF3':          'دعم ذو أولوية',
     'sidebar.cta':          'سجّل الآن في البرنامج',
+    'modal.journey':        'رحلة',
+    'modal.journeyDesc':    'وصول لمدة 5 أيام. يتضمن البطاقات اليومية والتمارين العملية.',
+    'modal.startBtn':       'ابدأ الرحلة — 4.00 AED (5 أيام)',
+    'modal.subscribe':      'اشتراك',
+    'modal.subscribeDesc':  'وصول كامل. يتضمن جميع البطاقات والتمارين وجلسات التدريب الاختيارية.',
+    'modal.subscribeBtn':   'اشترك الآن',
+    'modal.days':           'يوم',
     'footer.emailLabel':    'إرسال بريد إلكتروني',
     'footer.qLabel':        'هل لديك أي سؤال؟',
     'footer.newsletter':    'النشرة الإخبارية',
@@ -110,6 +117,13 @@ const translations = {
     'plan.premF2':          'Private session / 30 days',
     'plan.premF3':          'Priority support',
     'sidebar.cta':          'Register Now',
+    'modal.journey':        'Journey',
+    'modal.journeyDesc':    'Access for 5 days. Includes daily cards and exercises.',
+    'modal.startBtn':       'Start Free Journey — 4.00 AED (5 Days)',
+    'modal.subscribe':      'Subscribe',
+    'modal.subscribeDesc':  'Full access. Includes all cards, exercises, and optional coaching sessions.',
+    'modal.subscribeBtn':   'Subscribe Now',
+    'modal.days':           'Days',
     'footer.emailLabel':    'Send an Email',
     'footer.qLabel':        'Have any questions?',
     'footer.newsletter':    'Newsletter',
@@ -200,6 +214,7 @@ const journeysData = [
     id: 'eq-mastery',
     img: 'assets/cards/EQ Mastery.png',
     color: '#8E362D',
+    prices: { trial: 4, trialDays: 5, basic: 666, premium: 1111, durationDays: 30 },
     ar: {
       title: 'EQ Mastery',
       duration: '30 يوماً',
@@ -239,6 +254,7 @@ const journeysData = [
     id: 'customer-delight',
     img: 'assets/cards/CUSTOMER DELIGHT.png',
     color: '#05B2EC',
+    prices: { trial: 4, trialDays: 5, basic: 666, premium: 1111, durationDays: 30 },
     ar: {
       title: 'Customer Delight',
       duration: '30 يوماً',
@@ -278,6 +294,7 @@ const journeysData = [
     id: 'speak-to-lead',
     img: 'assets/cards/SPEAK TO LEAD.png',
     color: '#98E5FF',
+    prices: { trial: 4, trialDays: 5, basic: 666, premium: 1111, durationDays: 30 },
     ar: {
       title: 'Speak to Lead',
       duration: '30 يوماً',
@@ -321,6 +338,7 @@ const journeysData = [
     id: 'loyalty-30',
     img: 'assets/cards/EMPLOYEE LOYALTY 30 DAYS.png',
     color: '#A28BF5',
+    prices: { trial: 4, trialDays: 5, basic: 666, premium: 1111, durationDays: 30 },
     ar: {
       title: 'Employee Loyalty',
       duration: '30 يوماً',
@@ -360,6 +378,7 @@ const journeysData = [
     id: 'onboarding-excellence',
     img: 'assets/cards/EMPLOYEE ONBOARDING.png',
     color: '#C17733',
+    prices: { trial: 4, trialDays: 5, basic: 666, premium: 1111, durationDays: 30 },
     ar: {
       title: 'Employee Onboarding',
       duration: '30 يوماً',
@@ -399,6 +418,7 @@ const journeysData = [
     id: 'leadership-habits',
     img: 'assets/cards/LEDERSHIP JOURNEY HABITS 90 DAYS.png',
     color: '#936F5A',
+    prices: { trial: 4, trialDays: 5, basic: 1333, premium: 2444, durationDays: 90 },
     ar: {
       title: 'Leadership Journey Habits',
       duration: '90 يوماً',
@@ -438,6 +458,7 @@ const journeysData = [
     id: 'loyalty-90',
     img: 'assets/cards/EMPLOYEE LOYALTY 90 DAYS.png',
     color: '#A28BF5',
+    prices: { trial: 4, trialDays: 5, basic: 1333, premium: 2444, durationDays: 90 },
     ar: {
       title: 'Employee Loyalty (90 Days)',
       duration: '90 يوم',
@@ -640,7 +661,69 @@ function openSidebar(journey) {
       setTimeout(() => planCards.forEach(c => c.classList.remove('no-plan-shake')), 500);
       return;
     }
-    console.log('Register with plan:', selectedPlan, 'journey:', journey.id);
+    openPricingModal(journey, selectedPlan);
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PRICING MODAL
+// ─────────────────────────────────────────────────────────────────────────────
+function openPricingModal(journey, planType) {
+  const loc = jl(journey);
+  const { color } = journey;
+  const prices = journey.prices || { trial: 4, trialDays: 5, basic: 666, premium: 1111, durationDays: 30 };
+
+  const subscribePrice = planType === 'premium' ? prices.premium : prices.basic;
+  const planLabel = planType === 'premium' ? t('plan.premium') : t('plan.basic');
+  const modalTitle = `${loc.title} — ${planLabel}`;
+  const durationDays = prices.durationDays;
+
+  const subscribeBtn = `${t('modal.subscribeBtn')} — ${subscribePrice.toLocaleString()}.00 AED (${durationDays} ${t('modal.days')})`;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'pm-overlay';
+  overlay.innerHTML = `
+    <div class="pm-card" role="dialog" aria-modal="true">
+      <div class="pm-header">
+        <span class="pm-title">${modalTitle}</span>
+        <button class="pm-close" aria-label="Close">${icons.x}</button>
+      </div>
+      <div class="pm-options">
+
+        <div class="pm-option">
+          <span class="pm-badge" style="background:${color}">${t('modal.journey')}</span>
+          <h3 class="pm-option-title">${t('modal.journey')}</h3>
+          <p class="pm-option-desc">${t('modal.journeyDesc')}</p>
+          <button class="pm-btn pm-btn--trial" style="border-color:${color};color:${color}">
+            ${t('modal.startBtn')}
+          </button>
+        </div>
+
+        <div class="pm-option pm-option--subscribe">
+          <span class="pm-badge" style="background:${color}">${t('modal.subscribe')}</span>
+          <h3 class="pm-option-title">${t('modal.subscribe')}</h3>
+          <p class="pm-option-desc">${t('modal.subscribeDesc')}</p>
+          <button class="pm-btn pm-btn--subscribe" style="background:${color}">
+            ${subscribeBtn}
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add('pm-visible'));
+
+  const close = () => {
+    overlay.classList.remove('pm-visible');
+    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+  };
+
+  overlay.querySelector('.pm-close').addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function onKey(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
 }
 
